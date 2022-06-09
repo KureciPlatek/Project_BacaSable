@@ -34,7 +34,7 @@ in the following sections.
 Many RTOS exists, some are free, other openm source, other closed source, other does not provides all RTOS features (like different schedules like Rate monotonic or Hard/Soft RTOS)
 
 | RTOS | Schedulers | Open source | Free | Supported architectures | Supported Multi core | Size (kBytes) | POSIX |
-|:----:|:----------:|:-----------:|:----:|:-----------------------:|:--------------------:|:-------------:|:-----:|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |FreeRTOS| all | Y | Y | Many | Y | 5-10 | Partially |
 |VxWorks | all | N | N | Many | Y |1000-2000| Y |
 |ROS | None | Y | Y | Need Ubuntu OS as base. Is a framework, not an RTOS | ? | 1GB | N |
@@ -48,7 +48,7 @@ VxWorks seems to be a reference in the industry and may bring a good experience 
 #### Debugger choice
 
 | Name | Price | Source | Supported arch/uC | gdb |
-|:----:|:-----:|:------:|:-----------------:|:---:|
+|:-:|:-:|:-:|:-:|:-:|
 | Blackprobe | 65€ | Open | MANY | Y |
 | Segger | 400€ | Closed | MANY | Y |
 | Lauterbach || |please don't...||
@@ -61,15 +61,24 @@ STLink V3 would also be an interesting choice but is limited to STM8/32 architec
 
 The hardware target choice is motivated by one hardware filling most of the wanted characteristics. As the two previous arrays present Blackprobe as a good debugger and FreeRTOS or ThreadX as a good RTOS choice, all three of them will be added into hardware choice array
 
-| Board | Constructor | Architecture | DSP | Multi-core | Blackprobe | STLink V3 | RTOS | Price |
-|-------|:------------|:-------------|:----|:-----------|:-----------|:----------|:-----|:------|
-| Jetson Nano-Entwicklerkit | Nvidia | Cortex-A57 | N | Y | N | N | Y | 100$ |
-| Raspberry Pi 2
-| STM32 Nucleo
+| Board | Price | Architecture | Constructor |  Blackprobe | STLink V3 |  FreeRTOS | ThreadX | DSP | Multi-core | Memory | Others |
+|-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| NUCLEO-F439ZI|22€ | STM32 Cortex-M4 | ST | Y | Y | Y (with GCC) | Y (with GCC) | Y | N | 2M | FPU, ADC, Crypto
+| NUCLEO-F756ZG|22€| STM32 Cortex-M7 | ST | Y | Y |Y (with GCC)|Y (with gcc)| Y | N | 1M	| FPU, L1 cache, HW Crypto |
+|NUCLEO-H753ZI| 26€ | STM32 Cortex-M7 | ST | Y | Y | Y (with gcc) | Y (with GCC)| Y | N |	2M	| DP-FPU L1 cache, ADC, DAC, HW Crypto |
+|NUCLEO-H755ZI-Q|28€|STM32 Cortex-M7/M4 | ST |	Y | Y| Y (with gcc) |Y (with GCC) |Y | (Y) asymmetric | 2M |DP-FPU L1 cache, ADC, DAC,HW Crypto |
+|NUCLEO-WL55JC |41€|STM32 Cortex-M4/M0+ | ST | Y|Y|Y (with gcc) |Y (with GCC)| Y |  (Y) asymmetric | 256k | Ultra low power, DSP, AES-256, LoRa, GFSK, MSK, BPSK, Bluetooth LE |
+| P-NUCLEO-WB55 | 41€ | STM32WB55 Cortex-M4/M0+ | ST | Y|Y|Y (with gcc) | Y (with GCC) | Y | (Y) asymmetric | 1M |	Ultra low power, AES-256 crypto, Bluetooth LE, Thread comm |
+| Jetson Nano-Entwicklerkit | 250€ | Cortex-A57 | Nvidia | N | N | N | N | ? | 4  | 16G | GPU, L1 cache, Ethernet |
+| Raspberry Pi 4 | 67€ | Broadcom Cortex-A72 | Raspberry | N (but gdb) | N (but gdb)| Y (but complex), better a RTLinux | N | Y | 4 | Big |WLAN, Bluetooth 5.0, high perf computer arch
 
 Raspberry Pi target has a huge advantage to be available for many of developers (who don't have its Raspberry ?! Witch hunt will start ), and as Linux is respects UNIX/POSIX standards, a full implementation of a multi thread, multi core project already may be done on this target.
 
+A nucleo board presents nevertheless a good price/features ratio for pure embedded and hard RTOS purposes (FreeRTOS and ThreadX). They are also programmable as an external target through a cheap BlackProbe debugger which could be controlled by a Jenkins server.
+
 **Rejected strategies**
+
+
 
 **Documentation**
 See [Solution Strategy](https://docs.arc42.org/section-4/) in the arc42
