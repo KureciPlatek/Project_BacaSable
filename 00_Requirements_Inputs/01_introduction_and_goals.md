@@ -25,21 +25,18 @@ Unit test and hardware in the loop with shall be done with <strong>Jenkins</stro
 To train team work on a remote project, <strong>UML architecture</strong> shall be used as well as ARC42 documentation format.
 
 ### R2 - Environment
-The project shall be oriented to embedded systems, which means the use of a micro-controller and some Hardware
+The project shall be oriented to __embedded systems__, which means the use of a micro-controller and some Hardware
 
-### R3 IDE
-The project shall be IDE independent, as many people love to use their own environment. And also because it is possible to have a full project without the need of an IDE
+### R3 - IDE
+The project shall be __IDE independent__, as many people love to use their own environment. And also because it is possible to have a full project without the need of an IDE
 
-### R4 RTOS
-To develop real time operating system skills at its full possibility, the chosen RTOS shall be able to be either Hard RTOS or Soft RTOS, and different scheduler may be used.
-
-### R5 - Hardware/target
-#### R5.1 Availability
+### R4 - Hardware/target
+#### R4.1 Availability
 The hardware shall not be expensive and easily available on Internet for newcomers to easily join the project
-#### R5.2 Offered features
+#### R4.2 Offered features
 The hardware shall have a CPU with at least two core for synchronous RTOS. Monocore RTOS shall also be possible to be executed on the hardware target.
 
-### R6 Have fun
+### Rx Have fun
 You know what to do
 
 ## Quality Goals {#_quality_goals}

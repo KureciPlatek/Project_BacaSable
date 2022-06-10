@@ -15,6 +15,10 @@ This sub sections of introduction and goals explains what we want to learn/obser
  - Different schedulers policies: fixed priority, dynamic priority
  - Different priority policies: Rate monotonic,Deadline monotonic
 
+### RTOS architecture:
+ - Design a fully deterministic architecture, where maximal capacity of device may be calculated and presented as a quality goal. Best use of CPU should be done anyway
+ - Design a 100% CPU usage architecture where determinism is not priority. Best deterministic architecture should be anyway used
+
 ### Code optimization for better efficiency
  - Proper use of L1 cache/processor architecture
  - Functions inlining
