@@ -1,33 +1,67 @@
-# Deployment View {#section-deployment-view}
+# Runtime View {#section-runtime-view}
 
-## Infrastructure Level 1 {#_infrastructure_level_1}
+::: formalpara-title
+**Contents**
+:::
 
-***\<Overview Diagram>***
+The runtime view describes concrete behavior and interactions of the
+system's building blocks in form of scenarios from the following areas:
 
-Motivation
+-   important use cases or features: how do building blocks execute
+    them?
 
-:   *\<explanation in text form>*
+-   interactions at critical external interfaces: how do building blocks
+    cooperate with users and neighboring systems?
 
-Quality and/or Performance Features
+-   operation and administration: launch, start-up, stop
 
-:   *\<explanation in text form>*
+-   error and exception scenarios
 
-Mapping of Building Blocks to Infrastructure
+Remark: The main criterion for the choice of possible scenarios
+(sequences, workflows) is their **architectural relevance**. It is
+**not** important to describe a large number of scenarios. You should
+rather document a representative selection.
 
-:   *\<description of the mapping>*
+::: formalpara-title
+**Motivation**
+:::
 
-## Infrastructure Level 2 {#_infrastructure_level_2}
+You should understand how (instances of) building blocks of your system
+perform their job and communicate at runtime. You will mainly capture
+scenarios in your documentation to communicate your architecture to
+stakeholders that are less willing or able to read and understand the
+static models (building block view, deployment view).
 
-### *\<Infrastructure Element 1>* {#__emphasis_infrastructure_element_1_emphasis}
+::: formalpara-title
+**Form**
+:::
 
-*\<diagram + explanation>*
+There are many notations for describing scenarios, e.g.
 
-### *\<Infrastructure Element 2>* {#__emphasis_infrastructure_element_2_emphasis}
+-   numbered list of steps (in natural language)
 
-*\<diagram + explanation>*
+-   activity diagrams or flow charts
 
-...
+-   sequence diagrams
 
-### *\<Infrastructure Element n>* {#__emphasis_infrastructure_element_n_emphasis}
+-   BPMN or EPCs (event process chains)
 
-*\<diagram + explanation>*
+-   state machines
+
+-   ...
+
+See [Runtime View](https://docs.arc42.org/section-6/) in the arc42
+documentation.
+
+## \<Runtime Scenario 1> {#__runtime_scenario_1}
+
+-   *\<insert runtime diagram or textual description of the scenario>*
+
+-   *\<insert description of the notable aspects of the interactions
+    between the building block instances depicted in this diagram.\>*
+
+## \<Runtime Scenario 2> {#__runtime_scenario_2}
+
+## ... {#_}
+
+## \<Runtime Scenario n> {#__runtime_scenario_n}
