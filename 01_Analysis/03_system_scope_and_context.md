@@ -77,6 +77,16 @@ system to its environment. In addition a mapping of domain specific
 input/output to the channels, i.e. an explanation with I/O uses which
 channel.
 
+![Categories of Quality
+Requirements](images/Technical_context.png)
+
+|Interface| purpose | required by | provided by | Technical mean |
+|:-:|:-|:-:|:-:|:-:|
+|Debug | Provide an interface to debug target from a remote host | dbg server | BacaSable | ssh? |
+|unit test | Interface to execute automatized unit tests on target with Jenkins | Jenkins | BacaSable | ssh? |
+| Commands | Allow human to read info or send commands to target while running | human | BacaSable | UART or SPI |
+| Analog values | Provide values coming from physical world and play with it | BacaSable | Sensor | ADC |
+
 ::: formalpara-title
 **Motivation**
 :::
