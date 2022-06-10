@@ -18,7 +18,7 @@ For this reason, the needed hardware/infrastructure should be as cheaper as poss
 | ID  | Description |
 |-------------|:-------------------------|
 | *O1* | *Project is a sandbox and contributors will likely want to concentrate development on their own interest. The project must keep a common goal*   |
-| *O2* | **
+| *O2* | *Resources needed for project should be as light as possible (costs, place, availability...)* |
 
 #### Technical constraints
 

@@ -1,6 +1,6 @@
 # Solution Strategy {#section-solution-strategy}
 
-**Contents**
+### Contents
 
 A short summary and explanation of the fundamental decisions and
 solution strategies, that shape system architecture. It includes
@@ -15,19 +15,16 @@ solution strategies, that shape system architecture. It includes
 -   relevant organizational decisions, e.g. selecting a development
     process or delegating certain tasks to third parties.
 
-**Motivation**
+### Motivation
 
-These decisions form the cornerstones for your architecture. They are
-the foundation for many other detailed decisions or implementation
-rules.
+The different elements on which the full project will be based are chosen in their qualities of:
+ - price
+ - Availability
+ - match as much features requested as possible
 
-**Form**
+The elements chosen won't be perfect at some requirements will miss. But the most important is to have something light, our aim target is to discover the different technologies principles listed in requirements.
 
-Keep the explanations of such key decisions short.
-
-Motivate what was decided and why it was decided that way, based upon
-problem statement, quality goals and key constraints. Refer to details
-in the following sections.
+### Form
 
 #### RTOS choice
 
@@ -45,6 +42,10 @@ As seen in this array, two RTOS are interesting: FreeRTOS and ThreadX. Both are 
 
 VxWorks seems to be a reference in the industry and may bring a good experience to our skills, but as it aims too big project for us, its choice is postponed to a later date.
 
+__Choice :__  
+With respect of constraints [T1](02_architecture_constraints.md)  
+__FreeRTOS or ThreadX__ are good candidates as they offer full RTOS features (hard and soft scheduling, preemptive multi tasking, multi core arch...), they are free of use and seems to have a good community as support. ThreadX is developed by Microsoft and therefore has support.
+
 #### Debugger choice
 
 | Name | Price | Source | Supported arch/uC | gdb |
@@ -53,9 +54,15 @@ VxWorks seems to be a reference in the industry and may bring a good experience 
 | Segger | 400€ | Closed | MANY | Y |
 | Lauterbach || |please don't...||
 |STLink V3 | 35€ | Closed | STM8/32 only | partially |
+| gdb itself | - | open | almost all | - |
 
-Blackprobe presents the advantage to be compact, cheap, open source and provide gdb support as well as the support of many different architectures and uC.
-STLink V3 would also be an interesting choice but is limited to STM8/32 architectures only and has closed source design.
+Blackprobe presents the advantage to be compact, cheap, open source and provide gdb support as well as the support of many different architectures and uC.  
+STLink V3 would also be an interesting choice but is limited to STM8/32 architectures only and has closed source design.  
+gdb may be used through some USB or other communication mean to debug program directly on target (for example with the Raspberry Pi)
+
+__Choice :__  
+With respect of constraints [O2](02_architecture_constraints.md)  
+If only gdb may be used, then __gdb__. Otherwise, go for an architecture supported either by STLink or __BlackProbe__.
 
 #### Hardware target choice
 
@@ -71,15 +78,30 @@ The hardware target choice is motivated by one hardware filling most of the want
 | P-NUCLEO-WB55 | 41€ | STM32WB55 Cortex-M4/M0+ | ST | Y|Y|Y (with gcc) | Y (with GCC) | Y | (Y) asymmetric | 1M |	Ultra low power, AES-256 crypto, Bluetooth LE, Thread comm |
 | Jetson Nano-Entwicklerkit | 250€ | Cortex-A57 | Nvidia | N | N | N | N | ? | 4  | 16G | GPU, L1 cache, Ethernet |
 | Raspberry Pi 4 | 67€ | Broadcom Cortex-A72 | Raspberry | N (but gdb) | N (but gdb)| Y (but complex), better a RTLinux | N | Y | 4 | Big |WLAN, Bluetooth 5.0, high perf computer arch
+| Raspberry Pico | 5€ | RP2040 Dual core Cortex M0+ | Raspberry | N (but gdb) | N | Y (with gcc) | Y (with gcc) |N| 2 | 16M | SPI, I2C, C/C++ lib for RP2040 |
 
 Raspberry Pi target has a huge advantage to be available for many of developers (who don't have its Raspberry ?! Witch hunt will start ), and as Linux is respects UNIX/POSIX standards, a full implementation of a multi thread, multi core project already may be done on this target.
 
 A nucleo board presents nevertheless a good price/features ratio for pure embedded and hard RTOS purposes (FreeRTOS and ThreadX). They are also programmable as an external target through a cheap BlackProbe debugger which could be controlled by a Jenkins server.
 
-**Rejected strategies**
+__Choice :__  
+With respect of constraints [O2](02_architecture_constraints.md), [T2](02_architecture_constraints.md), [3](02_architecture_constraints.md), [T4](02_architecture_constraints.md) and [T5](02_architecture_constraints.md) (have a double core)  
+The __Raspberry Pico__ will be used as hardware target, as it costs almost nothing, is simple and provides a double core Cortex-M0+
 
+### Rejected strategies
+#### Rejected RTOS
+ - VxWorks and QNX will not be used as they are commercial use and need a license
+ - As ROS is not an RTOS but a framework, it won't be used as scheduler
 
+#### Debugger
+ - Lauterbach is simply too expensive
+ - Segger is also very expensive, and in the case of using RP2040 uC, it makes not many sense
+ - Blackprobe is more oriented for STM32 uC, it may be used in the future as it is open source and is not expensive
 
-**Documentation**
+#### Hardware target
+ - Nvidia Jetson will not be used, too expensive and too big for a sandbox project
+ - NUCLEO boards may be used in future if chosen target meets limitations
+
+### Documentation
 See [Solution Strategy](https://docs.arc42.org/section-4/) in the arc42
 documentation.
