@@ -7,7 +7,7 @@ The main focuses are:
 
  - <strong>C/C++</strong> in embedded world
  - <strong>CMake</strong>
- - Use of an <strong>RTOS</strong> on symmetric and asymmetric cores
+ - Use of an <strong>RTOS</strong> on symmetric and asymmetric multi-cores devices (monocore is also possible)
  - <strong>gdb</strong> debugging of multi threaded application
  - <strong>Optimize</strong> of performances, depending on the used hardware architecture
  - Do unit test and hardware in the loop with <strong>Jenkins</strong>
