@@ -12,7 +12,9 @@ The programming language used shall be <strong>C/C++</strong> in embedded world.
 #### R1.2 Compiler / project management:
 <strong>CMake</strong> shall be used to manage project source code, compiling and unit testing as well as some task automation, like scripting.
 #### R1.3 Real Time OS:
-The project shall use an <strong>RTOS</strong> on symmetric and asymmetric cores. The RTOS shall propose hard and soft real time OS
+The project shall use an <strong>RTOS</strong> on symmetric or asymmetric cores. The RTOS shall propose hard and soft real time OS  
+For more details about RTOS goals, please look at [this file](01_introduction_and_goals_RTOS.md)
+
 #### R1.4 Debugging:
 <strong>gdb</strong> shall be used for debugging of multi threaded application.
 #### R1.5 Hardware architecture optimization:
