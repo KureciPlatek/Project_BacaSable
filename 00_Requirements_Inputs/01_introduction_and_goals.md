@@ -20,7 +20,7 @@ For more details about RTOS goals, please look at [this file](01_introduction_an
 #### R1.5 Hardware architecture optimization:
 Some code parts shall show <strong>optimized</strong> performances, depending on the used hardware architecture, for that, some fancy assembler code may be developed
 #### R1.6 Testing:
-Unit test and hardware in the loop with shall be done with <strong>Jenkins</strong> and be automatized with the development process
+Unit test and hardware in the loop with may be done following the principles of <strong>devOps</strong>. It will improve the automation and development processes.
 #### R1.7 Architecture and team work:
 To train team work on a remote project, <strong>UML architecture</strong> shall be used as well as ARC42 documentation format.
 
