@@ -1,110 +1,62 @@
 # System Scope and Context {#section-system-scope-and-context}
 
-::: formalpara-title
-**Contents**
-:::
+### Contents
 
-System scope and context - as the name suggests - delimits your system
-(i.e. your scope) from all its communication partners (neighboring
-systems and users, i.e. the context of your system). It thereby
-specifies the external interfaces.
+The project is limited to a simple program in one hardware device, as cheap as possible because our aim is not to reach fancy performances, but to understand the impact of the quality of our code and of our architecture.
 
-If necessary, differentiate the business context (domain specific inputs
-and outputs) from the technical context (channels, protocols, hardware).
+Our product is a mere simple hardware, which will be programmed and flashed from a simple UNIX/Linux computer, it will have some interactions with ourselves, through a simple communication, but also with a debug/continuous integration server.
 
-::: formalpara-title
-**Motivation**
-:::
+An interface with the real physical world may also bring some unexpected behavior to our program. That is why adding one or more sensors will be done
+
+### Motivation
 
 The domain interfaces and technical interfaces to communication partners
 are among your system's most critical aspects. Make sure that you
-completely understand them.
-
-::: formalpara-title
-**Form**
-:::
-
-Various options:
-
--   Context diagrams
-
--   Lists of communication partners and their interfaces.
-
-See [Context and Scope](https://docs.arc42.org/section-3/) in the arc42
-documentation.
+completely understand them.  
+-> @todo
 
 ## Business Context {#_business_context}
 
-::: formalpara-title
-**Contents**
-:::
+**Contents**  
+There is no special business context as our aim is to show some technical skills instead of developing a business model and win money
 
-Specification of **all** communication partners (users, IT-systems, ...)
-with explanations of domain specific inputs and outputs or interfaces.
-Optionally you can add domain specific formats or communication
-protocols.
+**Motivation**  
+*none*  
 
-::: formalpara-title
-**Motivation**
-:::
+**Form**  
+*none*  
 
-All stakeholders should understand which data are exchanged with the
-environment of the system.
-
-::: formalpara-title
-**Form**
-:::
-
-All kinds of diagrams that show the system as a black box and specify
-the domain interfaces to communication partners.
-
-Alternatively (or additionally) you can use a table. The title of the
-table is the name of your system, the three columns contain the name of
-the communication partner, the inputs, and the outputs.
-
-**\<Diagram or Table>**
-
-**\<optionally: Explanation of external domain interfaces>**
 
 ## Technical Context {#_technical_context}
 
-::: formalpara-title
-**Contents**
-:::
+### Contents
 
-Technical interfaces (channels and transmission media) linking your
-system to its environment. In addition a mapping of domain specific
-input/output to the channels, i.e. an explanation with I/O uses which
-channel.
+We need communication means which allows us to debug, flash and analyze what is happening on our hardware.  
+To be able to have some interaction with the target, while running, the product need a simple in/out communication which may always work.  
+Finally, a "close to hardware" interface is also wished, because we want to build some embedded, hardware-close (almost analog) real-time OS.
+
+### Motivation
+
+There are 4 main communication interfaces:
+ - ssh for flashing, debugging and analysis of code
+ - UART or SPI, may also be I2C, a simple embedded communication mean for communication with external world, it will be used by human user
+ - ADC, Analog to Digital Converter as we seek to have some random info which need to be periodically polled
+
+As our aim is to not to master a special communication protocol or develop a fancy Internet stack, the communications are mainly easy and present on every electronic board/uC/uP.
+
+### Form
+
+*Technical context diagram:*  
 
 ![Categories of Quality
 Requirements](images/Technical_context.png)
 
-|Interface| purpose | required by | provided by | Technical mean |
-|:-:|:-|:-:|:-:|:-:|
-|Debug | Provide an interface to debug target from a remote host | dbg server | BacaSable | ssh? |
-|unit test | Interface to execute automatized unit tests on target with Jenkins | Jenkins | BacaSable | ssh? |
-| Commands | Allow human to read info or send commands to target while running | human | BacaSable | UART or SPI |
-| Analog values | Provide values coming from physical world and play with it | BacaSable | Sensor | ADC |
 
-::: formalpara-title
-**Motivation**
-:::
+*list of interfaces and their descriptions:*  
 
-Many stakeholders make architectural decision based on the technical
-interfaces between the system and its context. Especially infrastructure
-or hardware designers decide these technical interfaces.
-
-::: formalpara-title
-**Form**
-:::
-
-E.g. UML deployment diagram describing channels to neighboring systems,
-together with a mapping table showing the relationships between channels
-and input/output.
-
-**\<Diagram or Table>**
-
-**\<optionally: Explanation of technical interfaces>**
-
-**\<Mapping Input/Output to Channels>**
+|Interface| purpose | required by | provided by | Technical mean | in/out |
+|:-:|:-|:-:|:-:|:-:|:-:|
+|Debug | Provide an interface to debug target from a remote host | dbg server | BacaSable | ssh? | in/out |
+|unit test | Interface to execute automatized unit tests on target with a continuous integration server | DevOps | BacaSable | ssh? | in/out |
+| Commands | Allow human to read info or send commands to target while running | human | BacaSable | UART or SPI | out |
+| Analog values | Provide values coming from physical world and play with it | BacaSable | Sensor | ADC | in |
