@@ -1,5 +1,49 @@
 # Building Block View {#section-building-block-view}
 
+::: formalpara-title
+**Content**
+:::
+
+The building block view shows the static decomposition of the system
+into building blocks (modules, components, subsystems, classes,
+interfaces, packages, libraries, frameworks, layers, partitions, tiers,
+functions, macros, operations, datas structures, ...) as well as their
+dependencies (relationships, associations, ...)
+
+This view is mandatory for every architecture documentation. In analogy
+to a house this is the *floor plan*.
+
+::: formalpara-title
+**Motivation**
+:::
+
+Maintain an overview of your source code by making its structure
+understandable through abstraction.
+
+This allows you to communicate with your stakeholder on an abstract
+level without disclosing implementation details.
+
+::: formalpara-title
+**Form**
+:::
+
+The building block view is a hierarchical collection of black boxes and
+white boxes (see figure below) and their descriptions.
+
+![Hierarchy of building blocks](images/05_building_blocks-EN.png)
+
+**Level 1** is the white box description of the overall system together
+with black box descriptions of all contained building blocks.
+
+**Level 2** zooms into some building blocks of level 1. Thus it contains
+the white box description of selected building blocks of level 1,
+together with black box descriptions of their internal building blocks.
+
+**Level 3** zooms into selected building blocks of level 2, and so on.
+
+See [Building Block View](https://docs.arc42.org/section-5/) in the
+arc42 documentation.
+
 ## Whitebox Overall System {#_whitebox_overall_system}
 
 **Inputs of building block view:**
@@ -37,10 +81,10 @@ The annotation on each component (as well as the color) helps understand the dec
 
 | Interface | Description |
 |:-|:-|
-|```UI```| **U**ser **I**nterface,  interface between user system |
-|```ssh```| **S**uper **SH**ell, used for debug, analysis and continuous integration |
-|```ADC```| **A**nalog to **D**igital **C**onverter, interface to physical world |
-|```flash memory```| Interface to file system |
+|```UI```| **U**ser **I**nterface, is the logical interface between user (may be human or another system) and our system. It is an embedded communication mean |
+|```ssh```| **S**uper **SH**ell, used for debug, analysis and continuous integration. Touches the whole system |
+|```ADC```| **A**nalog to **D**igital **C**onverter, is our interface to physical world. It may be stubbed or not really exists, its main purpose is to watch something moving and have fun |
+|```flash memory```| Is the interface to our file system. It may be a full operational file system or a flash memory |
 
 ## Building block description
 
@@ -179,21 +223,57 @@ template:
 
 -   (Optional) Open issues/problems/risks
 
-## Interfaces description
-
-### ```UI```
-**U**ser **I**nterface, is the logical interface between user (may be human or another system) and our system. It is an embedded communication mean like CAN, I2C or USART. It may be used by all of the application software services (component ```service_list```)
-
-### ```ssh```
-**S**uper **SH**ell, used for debug, analysis and continuous integration. It touches the whole system and will allow us to do some deep performances analysis.
-
-### ```ADC```
-**A**nalog to **D**igital **C**onverter, is our interface to physical world. It may be stubbed or not really exists, its main purpose is to watch something moving and have fun.
-
-### ```flash memory```
-Is the interface to our file system. Depending on our hardware target, it may be the interface to a flash storage or a full file system on a hard drive like an SSD.
 
 
+### \<Name interface 1> {#__name_interface_1}
 
-See [Building Block View](https://docs.arc42.org/section-5/) in the
-arc42 documentation.
+### \<Name interface m> {#__name_interface_m}
+
+## Level 2 {#_level_2}
+
+Here you can specify the inner structure of (some) building blocks from
+level 1 as white boxes.
+
+You have to decide which building blocks of your system are important
+enough to justify such a detailed description. Please prefer relevance
+over completeness. Specify important, surprising, risky, complex or
+volatile building blocks. Leave out normal, simple, boring or
+standardized parts of your system
+
+### White Box *\<building block 1>* {#_white_box_emphasis_building_block_1_emphasis}
+
+...describes the internal structure of *building block 1*.
+
+*\<white box template>*
+
+### White Box *\<building block 2>* {#_white_box_emphasis_building_block_2_emphasis}
+
+*\<white box template>*
+
+...
+
+### White Box *\<building block m>* {#_white_box_emphasis_building_block_m_emphasis}
+
+*\<white box template>*
+
+## Level 3 {#_level_3}
+
+Here you can specify the inner structure of (some) building blocks from
+level 2 as white boxes.
+
+When you need more detailed levels of your architecture please copy this
+part of arc42 for additional levels.
+
+### White Box \<\_building block x.1\_\> {#_white_box_building_block_x_1}
+
+Specifies the internal structure of *building block x.1*.
+
+*\<white box template>*
+
+### White Box \<\_building block x.2\_\> {#_white_box_building_block_x_2}
+
+*\<white box template>*
+
+### White Box \<\_building block y.1\_\> {#_white_box_building_block_y_1}
+
+*\<white box template>*
