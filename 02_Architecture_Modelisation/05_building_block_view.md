@@ -55,13 +55,13 @@ All services in our program, except for interrupts block which is independent
 Quality goals are listed in [goals of RTOS](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md). There is a list of quality goals to reach, each one of them being good or bad. We will explore here the differences of quality between a well tailored RTOS from a quick and dirty RTOS massacre.
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
 From file [goals](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md), fulfill requirement R1.3
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```service_list```
 **Purpose/Responsibility:**  

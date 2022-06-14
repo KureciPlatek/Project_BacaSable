@@ -1,36 +1,25 @@
 # System Scope and Context {#section-system-scope-and-context}
 
-### Contents
-
 The project is limited to a simple program in one hardware device, as cheap as possible because our aim is not to reach fancy performances, but to understand the impact of the quality of our code and of our architecture.
 
 Our product is a mere simple hardware, which will be programmed and flashed from a simple UNIX/Linux computer, it will have some interactions with ourselves, through a simple communication, but also with a debug/continuous integration server.
 
 An interface with the real physical world may also bring some unexpected behavior to our program. That is why adding one or more sensors will be done
 
-### Motivation
-
 As the need to learn new technologies will surely change in the future, an full list of interfaces can't be fixed. On the contrary, we should add some spare hardware/software interfaces for future use.
 
 ## Business Context {#_business_context}
 
-**Contents**  
 There is no special business context as our aim is to show some technical skills instead of developing a business model and win money
 
 For this reason, a full specification of business model can't be fixed here, but a direction about what will be done is described in this paragraph anyway.
 
-**Motivation**  
-*none*  
-
-**Form**  
-
-*Technical context diagram:*  
+**Technical context diagram:**  
 
 ![Categories of Quality
 Requirements](images/Business_context.png)
 
-
-*list of interfaces and their descriptions:*  
+**list of interfaces and their descriptions:**  
 
 |Interface| purpose | required by | provided by |
 |:-:|:-|:-:|:-:|
@@ -43,13 +32,10 @@ Requirements](images/Business_context.png)
 
 ## Technical Context {#_technical_context}
 
-### Contents
-
 We need communication means which allows us to debug, flash and analyze what is happening on our hardware.  
 To be able to have some interaction with the target, while running, the product need a simple in/out communication which may always work.  
 Finally, a "close to hardware" interface is also wished, because we want to build some embedded, hardware-close (almost analog) real-time OS.
 
-### Motivation
 
 There are 4 main communication interfaces:
  - ssh for flashing, debugging and analysis of code
@@ -58,15 +44,14 @@ There are 4 main communication interfaces:
 
 As our aim is to not to master a special communication protocol or develop a fancy Internet stack, the communications are mainly easy and present on every electronic board/uC/uP.
 
-### Form
 
-*Technical context diagram:*  
+**Technical context diagram:**  
 
 ![Categories of Quality
 Requirements](images/Technical_context.png)
 
 
-*list of interfaces and their descriptions:*  
+**list of interfaces and their descriptions:**  
 
 |Interface| purpose | Technical mean | in/out |
 |:-:|:-|:-:|:-:|

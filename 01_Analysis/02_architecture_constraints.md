@@ -1,26 +1,16 @@
 # Architecture Constraints {#section-architecture-constraints}
 
-
-**Contents**
-
-
-
-
-**Motivation**
-
 The aim of this project is to work with some friends which may easily join the project and train themselves. The team work is also a goal of this project for us to train to work with other actors and stakeholders in a project.
 For this reason, the needed hardware/infrastructure should be as cheaper as possible.
 
-**Form**
-
-#### Organization constraints
+## Organization constraints
 
 | ID  | Description |
 |-------------|:-------------------------|
 | *O1* | *Project is a sandbox and contributors will likely want to concentrate development on their own interest. The project must keep a common goal*   |
 | *O2* | *Resources needed for project should be as light as possible (costs, place, availability...)* |
 
-#### Technical constraints
+## Technical constraints
 
 | ID  | Description |
 |-------------|:-------------------------|
@@ -30,7 +20,7 @@ For this reason, the needed hardware/infrastructure should be as cheaper as poss
 | *T4* | *Unit test will be applied on one hardware target only* |
 | *T5* | *Actually, almost all functional requirements are technical constraints* |
 
-#### Conventional constraints
+## Conventional constraints
 | ID  | Description |
 |-------------|:-------------------------|
 | *C1* | *TODO - Coding conventions must be respected (naming conventions, indentation, UTF-8 characters only, ANSI-C standard, ...)*   |
