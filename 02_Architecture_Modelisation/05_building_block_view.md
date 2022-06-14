@@ -68,116 +68,99 @@ From file [goals](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md), 
 Gather all application software we want to develop. It is a list, as application software need to be decomposed in services. Each app software topic in its own service
 
 **Interface(s)**  
+@todo
 
 **(Optional) Quality/Performance Characteristics**  
+@todo
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
--
+@todo
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```<service_IO>```
 **Purpose/Responsibility:**  
  All input/output which are not for continuous integration or debug will be in this one service. But each communication will have its own task. It is described as one service for logical reason: all same purpose stuff in one container.
 
 **Interface(s)**  
--
+@todo
 
 **(Optional) Quality/Performance Characteristics**  
--
+@todo
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
--
+@todo
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```service_encryption```
 **Purpose/Responsibility:**  
 A heavy computing service which uses a still to be defined external library. The library may be dynamically loaded while running or statically linked during compile phase. Its main purpose is to encrypt and decrypt data, while using a lot of CPU time and some shared resources.
 
 **Interface(s)**  
--
+@todo
 
 **(Optional) Quality/Performance Characteristics**  
--
+@todo
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
--
+@todo
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```service_database```
 **Purpose/Responsibility:**  
 Takes care of memory management. It is either volatile or non volatile, a file system or simple  C malloc() or whatever but it takes care to save data on memory for the system. It is a *critical* shared resource.
 
 **Interface(s)**  
--
+@todo
 
 **(Optional) Quality/Performance Characteristics**  
--
+@todo
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
--
+@todo
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```service_sensors```
 **Purpose/Responsibility:**  
 Provide values and events coming from the physical world. It is a kind of interaction with the system. Like ```service_IO``` each sensor should have its own task. The described service here is more like a container
 
 **Interface(s)**  
--
+@todo
 
 **(Optional) Quality/Performance Characteristics**  
--
+@todo
 
 **(Optional) Directory/File Location>**  
--
+@todo
 
 **(Optional) Fulfilled Requirements**  
--
+@todo
 
 **(optional) Open Issues/Problems/Risks**  
--
+@todo
 
 ### ```interrupts```
 **Purpose/Responsibility:**  
 Container which gathers all interrupt behavior, it is RTOS independent and may preempt full system as its priority is most of the time maximal (except for task of fatal level)
-
-
-
-Here you describe \<black box 1> according the the following black box
-template:
-
--   Interface(s), when they are not extracted as separate paragraphs.
-    This interfaces may include qualities and performance
-    characteristics.
-
--   (Optional) Quality-/Performance characteristics of the black box,
-    e.g.availability, run time behavior, ....
-
--   (Optional) directory/file location
-
--   (Optional) Fulfilled requirements (if you need traceability to
-    requirements).
-
--   (Optional) Open issues/problems/risks
 
 ## Interfaces description
 
