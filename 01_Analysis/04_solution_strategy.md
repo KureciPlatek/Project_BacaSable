@@ -1,22 +1,5 @@
 # Solution Strategy {#section-solution-strategy}
 
-### Contents
-
-A short summary and explanation of the fundamental decisions and
-solution strategies, that shape system architecture. It includes
-
--   technology decisions
-
--   decisions about the top-level decomposition of the system, e.g.
-    usage of an architectural pattern or design pattern
-
--   decisions on how to achieve key quality goals
-
--   relevant organizational decisions, e.g. selecting a development
-    process or delegating certain tasks to third parties.
-
-### Motivation
-
 The different elements on which the full project will be based are chosen in their qualities of:
  - price
  - Availability
@@ -24,9 +7,7 @@ The different elements on which the full project will be based are chosen in the
 
 The elements chosen won't be perfect at some requirements will miss. But the most important is to have something light, our aim target is to discover the different technologies principles listed in requirements.
 
-### Form
-
-#### RTOS choice
+## RTOS choice
 
 Many RTOS exists, some are free, other openm source, other closed source, other does not provides all RTOS features (like different schedules like Rate monotonic or Hard/Soft RTOS)
 
@@ -46,7 +27,9 @@ __Choice :__
 With respect of constraints [T1](02_architecture_constraints.md)  
 __FreeRTOS or ThreadX__ are good candidates as they offer full RTOS features (hard and soft scheduling, preemptive multi tasking, multi core arch...), they are free of use and seems to have a good community as support. ThreadX is developed by Microsoft and therefore has support.
 
-#### Debugger choice
+more details about RTOS firmware solution strategy may be found [here](./04solution_strategy_RTOS.md)
+
+## Debugger choice
 
 | Name | Price | Source | Supported arch/uC | gdb |
 |:-:|:-:|:-:|:-:|:-:|
@@ -64,7 +47,7 @@ __Choice :__
 With respect of constraints [O2](02_architecture_constraints.md)  
 If only gdb may be used, then __gdb__. Otherwise, go for an architecture supported either by STLink or __BlackProbe__.
 
-#### Hardware target choice
+## Hardware target choice
 
 The hardware target choice is motivated by one hardware filling most of the wanted characteristics. As the two previous arrays present Blackprobe as a good debugger and FreeRTOS or ThreadX as a good RTOS choice, all three of them will be added into hardware choice array
 
@@ -88,17 +71,17 @@ __Choice :__
 With respect of constraints [O2](02_architecture_constraints.md), [T2](02_architecture_constraints.md), [3](02_architecture_constraints.md), [T4](02_architecture_constraints.md) and [T5](02_architecture_constraints.md) (have a double core)  
 The __Raspberry Pico__ will be used as hardware target, as it costs almost nothing, is simple and provides a double core Cortex-M0+
 
-### Rejected strategies
-#### Rejected RTOS
+## Rejected strategies
+### Rejected RTOS
  - VxWorks and QNX will not be used as they are commercial use and need a license
  - As ROS is not an RTOS but a framework, it won't be used as scheduler
 
-#### Debugger
+### Debugger
  - Lauterbach is simply too expensive
  - Segger is also very expensive, and in the case of using RP2040 uC, it makes not many sense
  - Blackprobe is more oriented for STM32 uC, it may be used in the future as it is open source and is not expensive
 
-#### Hardware target
+### Hardware target
  - Nvidia Jetson will not be used, too expensive and too big for a sandbox project
  - NUCLEO boards may be used in future if chosen target meets limitations
 
