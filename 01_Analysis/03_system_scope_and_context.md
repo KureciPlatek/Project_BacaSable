@@ -10,21 +10,35 @@ An interface with the real physical world may also bring some unexpected behavio
 
 ### Motivation
 
-The domain interfaces and technical interfaces to communication partners
-are among your system's most critical aspects. Make sure that you
-completely understand them.  
--> @todo
+As the need to learn new technologies will surely change in the future, an full list of interfaces can't be fixed. On the contrary, we should add some spare hardware/software interfaces for future use.
 
 ## Business Context {#_business_context}
 
 **Contents**  
 There is no special business context as our aim is to show some technical skills instead of developing a business model and win money
 
+For this reason, a full specification of business model can't be fixed here, but a direction about what will be done is described in this paragraph anyway.
+
 **Motivation**  
 *none*  
 
 **Form**  
-*none*  
+
+*Technical context diagram:*  
+
+![Categories of Quality
+Requirements](images/Business_context.png)
+
+
+*list of interfaces and their descriptions:*  
+
+|Interface| purpose | required by | provided by |
+|:-:|:-|:-:|:-:|
+|Debug | Provide an interface to debug target from a remote host | dbg server | BacaSable |
+|unit test | Interface to execute automatized unit tests on target with a continuous integration server | DevOps | BacaSable |
+| Commands | Allow human to read info or send commands to target while running | human | BacaSable |
+| Analog values | Provide values coming from physical world and play with it | BacaSable | Sensor |
+| future use | Future use of BacaSable for new coming features. Other technologies may be desired to be implemented, so represent an unknown entity helps to keep in mind about those future use | ? | ? |
 
 
 ## Technical Context {#_technical_context}
@@ -54,9 +68,10 @@ Requirements](images/Technical_context.png)
 
 *list of interfaces and their descriptions:*  
 
-|Interface| purpose | required by | provided by | Technical mean | in/out |
-|:-:|:-|:-:|:-:|:-:|:-:|
-|Debug | Provide an interface to debug target from a remote host | dbg server | BacaSable | ssh? | in/out |
-|unit test | Interface to execute automatized unit tests on target with a continuous integration server | DevOps | BacaSable | ssh? | in/out |
-| Commands | Allow human to read info or send commands to target while running | human | BacaSable | UART or SPI | out |
-| Analog values | Provide values coming from physical world and play with it | BacaSable | Sensor | ADC | in |
+|Interface| purpose | Technical mean | in/out |
+|:-:|:-|:-:|:-:|
+|Debug | Provide an interface to debug target from a remote host | ssh? | in/out |
+|unit test | Interface to execute automatized unit tests on target with a continuous integration server |  ssh? | in/out |
+| Commands | Allow human to read info or send commands to target while running | UART or SPI | out |
+| Analog values | Provide values coming from physical world and play with it | ADC | in |
+| future use | Future use of BacaSable for new coming features | Available interfaces | ? |
