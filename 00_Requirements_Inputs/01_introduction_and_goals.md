@@ -42,6 +42,7 @@ You know what to do
 ## Quality Goals {#_quality_goals}
 
 There are no quality goals, as the project is a sandbox
+@todo, change it for different code and RTOS scheduling quality (good, bad and ugly)  
 
 ## Stakeholders {#_stakeholders}
 
