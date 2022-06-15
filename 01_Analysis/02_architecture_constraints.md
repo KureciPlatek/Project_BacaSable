@@ -1,4 +1,4 @@
-# Architecture Constraints {#section-architecture-constraints}
+# Architecture Constraints
 
 The aim of this project is to work with some friends which may easily join the project and train themselves. The team work is also a goal of this project for us to train to work with other actors and stakeholders in a project.
 For this reason, the needed hardware/infrastructure should be as cheaper as possible.

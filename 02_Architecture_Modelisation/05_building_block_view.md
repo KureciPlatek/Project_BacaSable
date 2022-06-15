@@ -1,6 +1,6 @@
-# Building Block View {#section-building-block-view}
+# Building Block View
 
-## Whitebox Overall System {#_whitebox_overall_system}
+## Whitebox Overall System
 
 **Inputs of building block view:**
  - use of a Raspberry Pico board with double core

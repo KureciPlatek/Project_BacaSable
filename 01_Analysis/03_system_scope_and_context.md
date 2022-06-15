@@ -1,4 +1,4 @@
-# System Scope and Context {#section-system-scope-and-context}
+# System Scope and Context
 
 The project is limited to a simple program in one hardware device, as cheap as possible because our aim is not to reach fancy performances, but to understand the impact of the quality of our code and of our architecture.
 
@@ -8,7 +8,7 @@ An interface with the real physical world may also bring some unexpected behavio
 
 As the need to learn new technologies will surely change in the future, an full list of interfaces can't be fixed. On the contrary, we should add some spare hardware/software interfaces for future use.
 
-## Business Context {#_business_context}
+## Business Context
 
 There is no special business context as our aim is to show some technical skills instead of developing a business model and win money
 
@@ -30,7 +30,7 @@ Requirements](images/Business_context.png)
 | future use | Future use of BacaSable for new coming features. Other technologies may be desired to be implemented, so represent an unknown entity helps to keep in mind about those future use | ? | ? |
 
 
-## Technical Context {#_technical_context}
+## Technical Context
 
 We need communication means which allows us to debug, flash and analyze what is happening on our hardware.  
 To be able to have some interaction with the target, while running, the product need a simple in/out communication which may always work.  

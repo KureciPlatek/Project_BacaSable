@@ -1,4 +1,4 @@
-# Solution Strategy {#section-solution-strategy}
+# Solution Strategy
 
 The different elements on which the full project will be based are chosen in their qualities of:
  - price

@@ -1,4 +1,6 @@
-# Introduction and Goals {#section-introduction-and-goals}
+# RTOS Introduction and Goals
+
+This document gathers RTOS specific requirements and quality goals.
 
 ## RTOS functional requirements Overview
 
@@ -38,7 +40,7 @@ Those features will "fill" the different task's purpose. They are typical servic
  - **R1.3.6.3** Service polling art: sensors input
  - **R1.3.6.4** Service slow time art: wait for a sub task or peripheral to finish job
 
-## Quality Goals {#_quality_goals}
+## Quality Goals
 
 ## The good code, the bad code and the ugly code:
 As in this marvelous western, aim of this project is also to see that some small stuff may kill the full system's behavior and make our product unstable and useless.  

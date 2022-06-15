@@ -1,4 +1,4 @@
-# Solution Strategy {#section-solution-strategy}
+# Solution Strategy
 
 Gathering input from [RTOS introduction and goals](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md), we can provide a first, approximation of solution strategy, to fulfill those requirements:
 
