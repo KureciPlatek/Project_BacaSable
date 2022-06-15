@@ -59,7 +59,7 @@ Quality goals are listed in [goals of RTOS](../00_Requirements_Inputs/01_introdu
 code: [03_Development/code/src/RTOS_scheduler/](../03_Development/code/src/RTOS_scheduler/)
 
 **(Optional) Fulfilled Requirements**  
- - [R1.3](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md), RTOS requirement
+ - [R1.3](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md), all RTOS requirement
 
 **(optional) Open Issues/Problems/Risks**  
 @todo
@@ -113,8 +113,8 @@ Task/service timings requirements
 code: [03_Development/code/src/service_IO/](../03_Development/code/src/service_IO/)
 
 **(Optional) Fulfilled Requirements**  
-@todo, spread RTOS requirements and better list/annotate them here
-Mandatory to fulfill requirements described in [RTOS goals](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md)
+ - [R1.3.6.1](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Service interrupt art
+ - [R1.3.4.x](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): User can activate bad or good code through IO
 
 **(optional) Open Issues/Problems/Risks**  
 @todo
@@ -141,7 +141,8 @@ Task/service timings requirements
 code: [03_Development/code/src/service_encryption/](../03_Development/code/src/service_encryption/)
 
 **(Optional) Fulfilled Requirements**  
-@todo Add requirement from RTOS goals
+ - [R1.3.6.2](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Heavy computing service, like AES encoding.
+ - [R1.3.4.x](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Code efficiency
 
 **(optional) Open Issues/Problems/Risks**  
  - Which encryption is still to be defined  
@@ -171,8 +172,10 @@ Task/service timings requirements
 code: [03_Development/code/src/RTOS_scheduler/](../03_Development/code/src/RTOS_scheduler/)
 
 **(Optional) Fulfilled Requirements**  
- - [R1.3](../00_Requirements_Inputs/01_introduction_and_goals.md) Real Time OS critical   ressource sharing  
-@todo Add requirements from RTOS goals file
+ - [R1.3.1.2](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Mutexes and semaphores
+ - [R1.3.4.4](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Memory leak
+ - [R1.3.6.4](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): slow service
+
 
 **(optional) Open Issues/Problems/Risks**  
  - Risk of too few place available in memory
@@ -200,9 +203,11 @@ code: [03_Development/code/src/service_sensors/](../03_Development/code/src/serv
 
 **(Optional) Fulfilled Requirements**  
  - [R2](../00_Requirements_Inputs/01_introduction_and_goals.md): work in an embedded environment
+ - [R1.3.6.3](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Polling art
 
 **(optional) Open Issues/Problems/Risks**  
 @todo
+
 
 ### ```interrupts```
 **Purpose/Responsibility:**  
@@ -222,7 +227,8 @@ Some maximum rating and worst-case scenario shall be described to limit interrup
 code: [03_Development/code/src/interrupts/](../03_Development/code/src/interrupts/)
 
 **(Optional) Fulfilled Requirements**  
-No functional requirement directly fulfilled with this container. But it is mandatory for the rest of the system to work
+ - [R1.3.6.1](../00_Requirements_Inputs/01_introduction_and_goals_RTOS.md): Memory leak
+No other particular functional requirement directly fulfilled with this container. But it is mandatory for the rest of the system to work
 
 **(optional) Open Issues/Problems/Risks**  
  - wrongly programmed, interrupt may simply kill our RTOS determinism design.
