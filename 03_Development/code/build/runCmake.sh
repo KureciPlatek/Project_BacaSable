@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cmake -G "Unix Makefiles" ../src/
+cmake ../src/
