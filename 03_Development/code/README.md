@@ -89,3 +89,7 @@ The stdio of Raspberry Pico can be found on the /dev/ttyACM0 port.
 To read it, either do it with `minicom` or `screen` program, baudrate is 115200 bauds.
 
 > $ sudo screen /dev/ttyACM0 115200
+
+Be aware, it may be another tty. To know which tty you have, run the following command:
+
+> $ dmesg | grep tty
