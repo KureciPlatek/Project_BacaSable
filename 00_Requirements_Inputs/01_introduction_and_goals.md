@@ -51,6 +51,16 @@ You know what to do
 There are no quality goals, as the project is a sandbox
 @todo, change it for different code and RTOS scheduling quality (good, bad and ugly)  
 
+### Q1 Code quality
+#### Q1.1 Static code analysis:  
+The code shall fulfill a static code analysis level - @todo level is to be defined  
+
+#### Q1.1 Dynamic code analysis:  
+A dynamic code analysis shall also be used. It is a complex quality quality goal as the program is running under a multi-tasking real time OS. 
+
+### Q2 memory management
+The program shall not present memory leak due to memory segmentation or any kind. A full analysis of memory use shall be done (outch!)
+
 ## Stakeholders
 
 

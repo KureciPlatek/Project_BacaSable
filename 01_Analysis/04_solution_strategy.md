@@ -29,6 +29,12 @@ __FreeRTOS or ThreadX__ are good candidates as they offer full RTOS features (ha
 
 more details about RTOS firmware solution strategy may be found [here](./04solution_strategy_RTOS.md)
 
+## Code choice  
+In view of all requirements and inputs, we will use __C/C++__ programming language for the project, as it allows a deep and powerful, bare metal programming. Therefore allowing us to create code adapted to the uC architectures. A programming language like Java or Python brings too much limitations.
+
+To fulfill quality goal [Q1.1](../00_Requirements_Inputs/01_introduction_and_goals.md): static code analysis and to respect constraint [O2](02_architecture_constraints.md): costs, a free, open source program, like __CppCheck__ will be used.  
+
+
 ## Debugger choice
 
 | Name | Price | Source | Supported arch/uC | gdb |
