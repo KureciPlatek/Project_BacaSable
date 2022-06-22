@@ -1,3 +1,3 @@
 [submodule "03_Development/code/FreeRTOS-Kernel"]
-	path = 03_Development/code/FreeRTOS-Kernel
+	path = 03_Development/code/src/FreeRTOS/FreeRTOS-Kernel
 	url = https://github.com/FreeRTOS/FreeRTOS-Kernel

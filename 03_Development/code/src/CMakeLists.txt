@@ -22,6 +22,11 @@ set(CMAKE_C_FLAGS_PROFILE "-Wall")
 # Init pico development kit (cmake call)
 pico_sdk_init()
 
+# Add FreeRTOS submodule as a directory for CMake
+add_subdirectory(FreeRTOS)
+add_subdirectory(blink)
+#add_subdirectory(divcheck)
+
 add_executable(${PROJECT_NAME} main.c)
 
 #@todo
