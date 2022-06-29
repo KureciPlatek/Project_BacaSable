@@ -17,12 +17,12 @@ The mandatory technologies used are following:
 The programming language used shall be C/C++ in embedded world. Some assembler code may also be used.
 
  - **R1.2** Low level programming:  
-After choice of hardware target, the architecture of CPU shall be explored and understood to optimize the code against it (good use of registers, assembler programming...).
+After choice of hardware target, the architecture of CPU shall be explored and understood to optimize the code against it (good use of registers, assembler programming, function inlining, proper use of L1 cache...).
 
  - **R1.3** Memory management:  
 As every program needs memory to work, how to properly use memory, especially with C/C++ and its stack/heap shall be explored. A memory leak/profiler tool shall also be used (described in section R2 - Tools).
 
- - **R1.3** Encryption:  
+ - **R1.4** Encryption:  
 Cyber security and safety is becoming a predominant part of our work as a compute science engineer. Therefore, encryption principle and attack test shall be done on product.
 
  - **R1.5** Hardware architecture optimization:  
@@ -68,38 +68,23 @@ Basic principles of artificial intelligence may be explored here, using the requ
 
  - **R3.** Have fun.
 
-@TODO: all shall be moved in arch constraints
-### R2 - Environment
- - **R2.1** Embedded systems:  
- The project shall be oriented to __embedded systems__, which means the use of a micro-controller and some Hardware
-
-### R3 - IDE
- - **R3.1** IDE independence:  
-The project shall be __IDE independent__, as many people love to use their own environment. And also because it is possible to have a full project without the need of an IDE
-
-### R4 - Hardware/target
- - **R4.1** Availability:  
-The hardware shall not be expensive and easily available on Internet for newcomers to easily join the project
-
- - **R4.2** Offered features:  
-The hardware shall have a CPU with at least two core for synchronous RTOS. Monocore RTOS shall also be possible to be executed on the hardware target.
-
-@END_TODO
-
 ## Quality Goals
-
-There are no quality goals, as the project is a sandbox
-@todo, change it for different code and RTOS scheduling quality (good, bad and ugly)  
+the following quality goals are also principles or tools to be understood and/or improved.
 
 ### Q1 Code quality
 #### Q1.1 Static code analysis:  
-The code shall fulfill a static code analysis level - @todo level is to be defined  
+A static code analysis shall applied to code with a tool. Level of quality to be reached is still to be defined
 
 #### Q1.1 Dynamic code analysis:  
-A dynamic code analysis shall also be used. It is a complex quality quality goal as the program is running under a multi-tasking real time OS. 
+A dynamic code analysis shall also be applied to code. It is a complex quality quality goal as the program is running under a multi-tasking real time OS. Level of quality is still to be defined
 
 ### Q2 memory management
-The program shall not present memory leak due to memory segmentation or any kind. A full analysis of memory use shall be done (outch!)
+A memory analysis tool/profiler shall be used to check for memory leak due to memory segmentation or any kind.  
+The program shall run for 10 minutes and not present any kind of segmentation leading to memory leak and still have the same quantity of free memory, with a difference of 1% allowed.
+
+### Q3 RTOS efficiency
+
+RTOS quality requirements are defined in [this file](01_introduction_and_goals_RTOS.md).  
 
 ## Stakeholders
 

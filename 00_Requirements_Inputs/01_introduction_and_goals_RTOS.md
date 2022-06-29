@@ -2,62 +2,40 @@
 
 This document gathers RTOS specific requirements and quality goals.
 
+****  
 ## RTOS functional requirements Overview
 
 This sub sections of introduction and goals explains what we want to learn/observe on an RTOS service. There are some RTOS principle we want to discover, understand how rightfully/wrongly coded program may work or not, try different RTOS behavior and so on.
 
-### RTOS Principles:
- - **R1.3.1.1** priority inversion problem
- - **R1.3.1.2** Mutexes and semaphores (shared ressources)
- - **R1.3.1.3** Reentrant functions (Thread safe)
+The following requirements are all subdivisions of requirement **R3.1** from [01_introduction_and_goals](01_introduction_and_goals.md) file. They are all principles to be discovered.
 
-### RTOS behaviors:
- - **R1.3.2.1** Hard RTOS
- - **R1.3.2.2** Soft RTOS
- - **R1.3.2.3** Different schedulers policies: fixed priority, dynamic priority
- - **R1.3.2.4** Different priority policies: Rate monotonic,Deadline monotonic
+_RTOS coding_:
+ - **R3.1.1** The program shall be able to show a case with priority inversion problem
+ - **R3.1.2** The program shall use mutexes and semaphores on a shared critical resource
+ - **R3.1.3** The program shall use cases of thread safe functions (re-entrant)
 
-### RTOS architecture:
- - **R1.3.3.1** Design a fully deterministic architecture, where maximal capacity of device may be calculated and presented as a quality goal. Best use of CPU should be done anyway
- - **R1.3.3.2** Design a 100% CPU usage architecture where determinism is not priority. Best deterministic architecture should be anyway used
+_RTOS behaviors_:
+ - **R3.1.4** The program shall be able to be activated either as hard or soft RTOS
+ - **R3.1.5** The program shall use different schedulers policies: fixed priority, dynamic priority
+ - **R3.1.6** The program shall present cases of different priority policies: rate monotonic, deadline monotonic and other if exists
+ - **R3.1.7** The program shall have either symmetric multi-core or asymmetric multi-core behaviors
+ - **R3.1.8** The program shall have present all combinations of RTOS possible behaviors (functional requirements R3.1.4 to R3.1.7) which makes 16 different combinations.
 
-### Code optimization for better efficiency
- - **R1.3.4.1** Proper use of L1 cache/processor architecture
- - **R1.3.4.2** Functions inlining
- - **R1.3.4.3** Compiler optimizations
- - **R1.3.4.4** Memory management and memory leak detection (Valgrind)
+_RTOS analysis_:
+ - **R3.1.5.3** The RTOS program tasks shall be profiled with use of a gdb and/or a task time viewer
+ - **R3.1.5.1** Make an analysis of task time slot allocation (have 100% CPU time used), check mathematically
 
-### Debug and test
- - **R1.3.5.1** Make an analysis of task time slot allocation (have 100% CPU time used), check mathematically
- - **R1.3.5.2** Unit test of tasks, check if they fit in their allowed time
- - **R1.3.5.3** Profiling of RTOS with use of gdb and/or a task time viewer
-
-### Non RTOS features:
-Those features will "fill" the different task's purpose. They are typical services we may meet in RTOS all day life. They may be of interrupt art, heavy computing time, polling art or shared ressource/slow time art.
-
- - **R1.3.6.1** Service interrupt art: communication SPI, I2C, UART, CAN (not on all uC)
- - **R1.3.6.2** Service heavy computing time art: encryption (AES), FFT or signal processing, artificial intelligence/machine learning
- - **R1.3.6.3** Service polling art: sensors input
- - **R1.3.6.4** Service slow time art: wait for a sub task or peripheral to finish job
-
+****  
 ## Quality Goals
 
-## The good code, the bad code and the ugly code:
-As in this marvelous western, aim of this project is also to see that some small stuff may kill the full system's behavior and make our product unstable and useless.  
-All the different features listed before will have a good code as well as a bad (doesn't fulfill requirement) and an ugly code (don't work in some case)  
+Two different scenarios of RTOS will be tested in their qualities: a HARD RTOS and a SOFT RTOS.  
+A hard RTOS always fulfill its deadlines (deterministic)  
+A soft RTOS maximise CPU use and allows some deadlines to be missed (best effort)
 
-There are 3 elements to be careful for a stable and optimized RTOS service:
- - **Q1.3.1** Taking care of uC/uP architecture and how we code (cache, stack, Mutexes, reentrant functions...)
- - **Q1.3.2** Choose the right RTOS behavior (scheduler and priority policy)
- - **Q1.3.3** Choose the right task time slot allocation
+ - **Q3.1** The HARD RTOS shall present a CPU use of at least 80% and in any case be deterministic.
+    - **Q3.1.1** All HARD RTOS tasks must be unit tested for their running time and 100% shall meet their allocated time
+    - **Q3.1.2** All HARD RTOS task shall be profiled and their time allocation calculated to meet a 80% use of CPU  
 
-Different code will be developed to show that if one of those is wrongly made, the system can't match the expected requirements. To do that, those different code will compiled in different static libraries and chosen during linking with CMake. Or compiled in dynamic library and program will switch from good to bad to ugly library while running, as human ask for it through an I/O command (like an SPI message which orders program to use bad functions lib instead of good).
 
- -  **R1.3.7.1** The good code:  
-The good code will show that with optimized code for architecture, with the good RTOS behavior (Scheduler and priority policies) and a good analysis (task profiling), the required service works always and is table in the time  
-
- - **R1.3.7.2** The bad code:  
-The bad code will show that the system, if one of the three elements (coding, RTOS behavior and task time allocation) is wrongly made, the required service simply don't work.
-
- - **R1.3.7.3** The ugly code:  
-The ugly code will be as this filthy guy in the movie, it will work, but not always. Some situations like after a long time, or a bad profiled task time allocation may lead in some situation to a bottleneck, deadlock or a deadline missed.
+ - **Q3.2** the SOFT RTOS shall present a CPU use of 100% without need of perfect deadline respect.
+    - **Q3.2.1** Soft RTOS shall never freeze and even if inputs rate is too high for soft RTOS's program, code shall be able to release tasks or drop some duties.
